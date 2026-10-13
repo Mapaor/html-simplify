@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Simplify</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero" aria-labelledby="page-title">
+        <h1 id="page-title">Simplify HTML</h1>
+        <p class="hero-copy">
+          Paste a fragment from DevTools and get its skeleton.
+        </p>
+      </section>
+
+      <section class="workspace" aria-label="HTML simplifier">
+        <article class="panel input-panel">
+          <div class="panel-heading">
+            <div>
+              <span class="panel-kicker">Input</span>
+              <h2>HTML fragment</h2>
+            </div>
+            <!-- <span class="format-badge">HTML</span> -->
+          </div>
+          <label class="sr-only" for="html-input">HTML fragment to simplify</label>
+          <div class="editor">
+            <pre class="editor-highlight" aria-hidden="true"><code></code></pre>
+            <textarea
+              id="html-input"
+              spellcheck="false"
+              placeholder="<div class=&quot;card&quot; data-id=&quot;42&quot;>
+  <h2>Keep this heading</h2>
+  <svg>...</svg>
+</div>"
+            ></textarea>
+          </div>
+          <div class="input-footer">
+            <span id="validation-message" class="validation-message" role="status">
+              Waiting for a snippet
+            </span>
+            <button id="simplify-button" class="primary-button" type="button">
+              Simplify HTML
+            </button>
+          </div>
+        </article>
+
+        <article class="panel output-panel">
+          <div class="panel-heading">
+            <div>
+              <span class="panel-kicker">Output</span>
+              <h2>Simplified HTML</h2>
+            </div>
+            <button id="copy-button" class="icon-button" type="button" aria-label="Copy simplified HTML" disabled>
+              Copy
+            </button>
+          </div>
+          <pre id="html-output" class="code-output" aria-live="polite"><code><span class="output-placeholder">The corresponding simplified HTML will appear here.</span></code></pre>
+          <div class="output-footer">
+            <span id="output-meta">0 lines · 0 characters</span>
+            <span>Runs in the browser</span>
+          </div>
+        </article>
+      </section>
+
+      <footer class="page-footer">
+        <span>Removes SVGs, scripts, styles, comments, and non-essential attributes.</span>
+      </footer>
+    </main>
+
+    <script src="simplifier.js"></script>
+    <script src="highlight.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
