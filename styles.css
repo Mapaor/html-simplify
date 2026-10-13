@@ -26,8 +26,11 @@ button { cursor: pointer; }
 
 .app-shell {
   width: calc(100% - 45px);
+  height: 100vh;
   margin: 0 auto;
-  padding: 24px 0 45px;
+  padding: 24px 0 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .panel-heading, .input-footer, .output-footer, .page-footer {
@@ -41,7 +44,7 @@ button { cursor: pointer; }
 
 .hero {
   max-width: 600px;
-  padding: 0 0 45px;
+  padding: 0 0 24px;
 }
 
 h1 {
@@ -64,7 +67,8 @@ h1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
-  min-height: calc(100vh - 170px);
+  flex: 1;
+  min-height: 0;
 }
 
 .panel {
@@ -259,8 +263,8 @@ textarea {
 }
 
 @media (max-width: 760px) {
-  .app-shell { width: min(100% - 28px, 560px); padding-top: 16px; }
-  .hero { padding: 0 0 26px; }
+  .app-shell { width: min(100% - 28px, 560px); height: auto; padding: 16px 0 20px; }
+  .hero { padding: 0 0 20px; }
   .workspace { grid-template-columns: 1fr; }
   .workspace { min-height: 0; }
   .editor, .editor-highlight, textarea, .code-output { min-height: 270px; }
