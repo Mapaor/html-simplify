@@ -65,7 +65,7 @@ function simplifyHtml(html) {
 }
 
 function validateHtmlFragment(html) {
-  if (!html.trim()) return { valid: false, message: "" };
+  if (!html.trim()) return { valid: true, message: "Paste some HTML snippet" };
 
   const parser = new DOMParser();
   const document = parser.parseFromString(html, "text/html");
